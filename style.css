@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+body {
+    font-family: Lato;
+}
+
+#main {
+    margin: 20px;
+    position: relative;
+    background: white;
+    text-align: center; 
+}
+
+h1 {
+    text-align: left;
+}
+h3 {
+    text-align:left;
+}
+
+input[type=checkbox] {
+    width: 32px;
+    height:32px;
+    filter: drop-shadow(1px 1px 1px gray);
+    margin: 3px;
+}
+
+.pieChart {
+    text-align: center;
+    font-weight: bold;
+    width: 40%;
+    height:40%;
+}
+
+#pieChart3 {
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    width: 40%;
+    height:40%;
+}
+
+#pieChart2 {
+    float:right;
+}
+
+input[type='radio'] {
+    width: 2rem;
+    height: 2rem;
+    align-self: center;
+}
+
+img {
+    align-self: center;
+}
+
+input[type=number] {
+    filter: drop-shadow(1px 1px 1px gray)
+}
+
+label {
+    align-self: center;
+}
+
+#courseOptionForm {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.overviewContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+}
+
+.overviewFormContainer {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    border-radius: 12px;
+    border: solid 1px black;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 5px;
+}
+.columns {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    border-radius: 12px;
+    border: solid 1px black;
+}
+
+#tooltips {
+    margin: 3px;
+}
+
+#courses {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #E5E5E5;
+    border-radius: 12px;
+}
+
+.courseOptionInputGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+}
+
+.courseButtonGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.courseButton {
+    flex: 1;
+    background-color: #21346A;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    width: 128px;
+}
+
+.courseButton:hover {
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #111c38;
+}
+
+.course {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #1BBEE9;
+    color: white;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.inputLine {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: strech;
+}
+
+.buttonGroup {
+    position: absolute;
+    right: 0px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: strech;
+}
+
+.navButton {
+    background-color: #1BBEE9;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 28px;
+    width: 128px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    border: solid 1px white;
+}
+
+#createAssessment {
+    align-self: center;
+    width: 512px;
+}
+
+#programCostEdit {
+    width: 300px;
+    background: #21346A;
+}
+
+.navButton:hover {
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#submitButton {
+    background-color: #21346A;
+    
+}
+
+#submitButton:hover {
+    background-color: #111c38;
+    transition: 0.5s;
+}
+
+#resetButton {
+    width: 256px;
+    display: block;
+    background-color: #ff4e4e;
+    
+}
+
+#resetButton:hover {
+    background-color: #ff0000;
+    transition: 0.5s;
+}
+
+#appFee, #textBook, #uniform, #revenue{
+    text-align:left;
+}
+#createNew {
+    float: right;
+    width: 450px;
+}
+
+#piChart {
+    float:right;
+    top:135px;
+    left:400px;
+    height:500px;
+    position:absolute;
+}
+#main-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 25px;
+    background: #21346A;
+    color: aliceblue;
+    font-size: 23px;
+    /* line-height: 1700%; */
+}
+
+#bottom {
+    width: 100%;
+    margin: 0 auto;
+    bottom: 0%;
+    position: fixed;
+}
+
+#submitButton {
+    height:auto;
+    width:auto;
+    max-width:200px;
+    max-height:200px;
+}
+
+#tooltips {
+    position:absolute;
+}
+
+#piChart {
+    margin: 100px;
+}
+
+input[type = number] {
+    padding:10px;
+    border:0;
+    margin-bottom: 20px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    background-color: #F0F0F0;
+    background: #FFFFFF;
+}
+
+/*body {
+	background-color: #E5E5E5;
+}*/
+/* toolbar*/
+
+.logo {
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	float: left;
+	height: 110px;
+	width: 110px;
+	float: left;
+	height: 110px;
+	width: 110px;
+}
+
+.topnav {
+	background-color: #E5E5E5;
+	text-align: center;
+}
+ 
+.topnav ul a {
+	display: inline-block;
+	text-align: center;
+	justify-content: center;
+	font-family: Lato;
+	font-size: 32px;
+	font-weight: 300;
+	color: #21346A;
+	padding: 40px 16px;
+}
+
+.topnav a:hover {
+    color: white;
+	background-color: #1BBEE9;
+    transition: 0.5s;
+}
+
+div {
+    text-align: left;
+}
+
+.modal {
+    display: none; /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.modalBtn {
+    background-color: #21346A;
+    border: none;
+    color: white;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 2px 2px;
+    border-radius: 50%;
+}
+
+.modalBtn:hover {
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #111c38;
+}

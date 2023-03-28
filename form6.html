@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuition Assessment Tool</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload = "form6Load();">
+    <div id="main">
+        <div class="topnav">
+            <img class="logo" src="Logo-circle.png">
+            <ul>
+                <a class="active" href="instructions.html">Instructions</a>
+                <a href="index.html">Courses</a>
+                <a href="faq.html">FAQ</a>
+                <a href="#account">Account</a>
+            </ul>
+        </div>
+        <h1>Tuition Assessment Tool</h1>
+
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>header</h1>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <p>text</p>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <button type='button' class="navButton" onclick="document.getElementById('myModal').style.display = 'none';" style="background-color: #21346A;">Close</button>
+            </div>
+        </div>
+
+        <form id = "formInputs">
+            <div class="buttonGroup">
+                <button type="button" class="navButton" id="resetButton" onclick = "select();">Select All</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "fill();">Fill Empty</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetPage();">Clear Fields</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetAll();">Reset Entire Course</button>
+            </div>
+
+            <h2>Options With Costs (Part 2):</h2>
+
+            <label for="input1"><b>State Competency Examination:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check1" name = "check1">
+                <input type="number" id="input1" name="input1" oninput="autocheck(1);">
+                <button type='button' class="modalBtn" id="modalBtn21" onclick="createTooltip(this.id, 'State Competency Examination', 'The cost of administering and giving a student the option to take the State Competency Examination.')">?</button><br>
+            </div>
+
+            <label for="input2"><b>CPR Certification:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check2" name = "check2">
+                <input type="number" id="input2" name="input2" oninput="autocheck(2);">
+                <button type='button' class="modalBtn" id="modalBtn22" onclick="createTooltip(this.id, 'CPR Certification', 'The cost for a student to become CPR certified.')">?</button><br>
+            </div>
+
+            <label for="input3"><b>Background Check:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check3" name = "check3">
+                <input type="number" id="input3" name="input3" oninput="autocheck(3);">
+                <button type='button' class="modalBtn" id="modalBtn23" onclick="createTooltip(this.id, 'Background Check', 'The cost to complete a background check for each student.')">?</button><br>
+            </div>
+
+            <label for="input4"><b>PPD Test:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check4" name = "check4">
+                <input type="number" id="input4" name="input4" oninput="autocheck(4);">
+                <button type='button' class="modalBtn" id="modalBtn24" onclick="createTooltip(this.id, 'PPD Test', 'The cost to give a student a PPD test.')">?</button><br>
+            </div>
+
+            <label for="input5"><b>Drug Screening:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check5" name = "check5">
+                <input type="number" id="input5" name="input5" oninput="autocheck(5);">
+                <button type='button' class="modalBtn" id="modalBtn25" onclick="createTooltip(this.id, 'Drug Screening', 'The cost to complete a drug screening for each student.')">?</button><br>
+            </div>
+
+            <label for="input6"><b>CNA Registration Fee:</b></label><br>
+            <div class="inputLine">
+                <input type="checkbox" id ="check6" name = "check6">
+                <input type="number" id="input6" name="input6" oninput="autocheck(6);">
+                <button type='button' class="modalBtn" id="modalBtn26" onclick="createTooltip(this.id, 'CNA Registration Fee', 'The cost to register for a CNA school for a student.')">?</button><br>
+            </div>
+          </form>
+
+          <button type="button" class="navButton" onclick = "form6Back();">Back</button>
+          <button type="button" class="navButton" id="submitButton" onclick = "form6Next();">Submit</button>
+    </div>
+</body>
+<script src="./main.js"></script>
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+</html>

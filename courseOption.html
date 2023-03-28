@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuition Assessment Tool</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="courseOptionLoad();">
+    <div id="main">
+        <div class="topnav">
+            <img class="logo" src="Logo-circle.png">
+            <ul>
+                <a class="active" href="instructions.html">Instructions</a>
+                <a href="index.html">Courses</a>
+                <a href="faq.html">FAQ</a>
+                <a href="#account">Account</a>
+            </ul>
+        </div>
+
+        <!-- <button id="modalBtn">Open Modal</button> -->
+          
+        <h1>Tuition Assessment Tool</h1>
+
+        <!-- <button id="modalBtn">Tooltip</button> -->
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>header</h1>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <p>text</p>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <button type='button' class="navButton" onclick="document.getElementById('myModal').style.display = 'none';" style="background-color: #21346A;">Close</button>
+            </div>
+        </div>
+
+
+        <form id = "courseOptionForm">
+            
+            <div class="courseOptionInputGroup">
+                <input type="radio" id="input1" name="input" value = "In-Person">
+                <label for="input1"><b>In-Person</b></label><br>
+                <button type='button' class="modalBtn" id="modalBtn1" onclick="createTooltip(this.id, 'In-Person',
+                'For an In-Person course, the lecture, lab, and clinical portions of the class are held in-person.')">?</button>
+            </div>
+
+
+           
+            <div class="courseOptionInputGroup">
+                <input type="radio" id="input2" name="input" value = "Hybrid (Pre-Recorded Lecture)">
+                <label for="input2"><b>Hybrid (Pre-Recorded Lecture)</b></label><br>
+                <label for="Licensing Fee">Licensing Fee Per Student:</label><br>
+                <input type ="number" id ="Licensing Fee" name = "inputNum" style="margin-bottom: 0;">
+                <button type='button' class="modalBtn" id="modalBtn2" onclick="createTooltip(this.id, 'Hybrid (Pre-Recorded Lecture)',
+                'For this hybrid course option, lecture is pre-recorded and watched by students individually. Lab and Clinical portions of the class are still held in-person. Additionally, there is a licensing fee which must be paid per student for the pre-recorded lecture.')">?</button>
+
+            </div>
+            
+            
+            <div class="courseOptionInputGroup">
+                <input type="radio" id="input3" name="input" value = "Hybrid (Video Conferencing)">
+                <label for="input3"><b>Hybrid (Video Conferencing)</b></label><br>
+                <button type='button' class="modalBtn" id="modalBtn3" onclick="createTooltip(this.id, 'Hybrid (Video Conferencing)',
+                 'For this hybrid course option, lecture is held through video conferencing, while the Lab and Clinical portions of the class are still held in-person.')">?</button>
+            </div>
+            
+          </form>
+
+          <button type="button" class="navButton" onclick = "courseOptionBack();">Back</button>
+          <button type="button" class="navButton" onclick = "courseOptionNext();">Next</button>
+
+    </div>
+</body>
+<script src="./main.js"></script>
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+</html>

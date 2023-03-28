@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuition Assessment Tool</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload = "form2Load();">
+
+    <div id="main">
+        <div class="topnav">
+            <img class="logo" src="Logo-circle.png">
+            <ul>
+                <a class="active" href="instructions.html">Instructions</a>
+                <a href="index.html">Courses</a>
+                <a href="faq.html">FAQ</a>
+                <a href="#account">Account</a>
+            </ul>
+        </div>
+        <h1>Tuition Assessment Tool</h1>
+        
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>header</h1>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <p>text</p>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <button type='button' class="navButton" onclick="document.getElementById('myModal').style.display = 'none';" style="background-color: #21346A;">Close</button>
+            </div>
+        </div>
+        
+        <form id = "formInputs">
+            <div class="buttonGroup">
+                <button type="button" class="navButton" id="resetButton" onclick = "fill();">Fill Empty</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetPage();">Clear Fields</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetAll();">Reset Entire Course</button>
+            </div>
+
+            <h2>Figures For Calculations:</h2>
+
+            <label for="input1"><b>Length of Course in Weeks:</b></label><br>
+            <input type="number" id="input1" name="input1">
+            <button type='button' class="modalBtn" id="modalBtn8" onclick="createTooltip(this.id, 'Length of Course in Weeks', 'The number of weeks it will take to hold the course.')">?</button><br>
+
+            <label for="input2"><b>Hourly Rate for Classroom Instructor:</b></label><br>
+            <input type="number" id="input2" name="input2">
+            <button type='button' class="modalBtn" id="modalBtn9" onclick="createTooltip(this.id, 'Hourly Rate for Classroom Instructor', 'The hourly rate paid to the Classroom Instructor associated with Theory and Lab portion of the class.')">?</button><br>
+
+            <label for="input3"><b>Hourly Rate for Clinical Instructor:</b></label><br>
+            <input type="number" id="input3" name="input3">
+            <button type='button' class="modalBtn" id="modalBtn10" onclick="createTooltip(this.id, 'Hourly Rate for Clinical Instructor', 'The hourly rate paid to the Clinical Instructor associated with the clinical portion of the class.')">?</button><br>
+
+            <label for="input4"><b>Max Number of Students Per Class Instructor:</b></label><br>
+            <input type="number" id="input4" name="input4">
+            <button type='button' class="modalBtn" id="modalBtn11" onclick="createTooltip(this.id, 'Max Number of Students Per Class Instructor', 'The maximum number of students which can be taught per Class Instructor.')">?</button><br>
+
+            <label for="input5"><b>Max Number of Students Per Clinical Instructor:</b></label><br>
+            <input type="number" id="input5" name="input5">
+            <button type='button' class="modalBtn" id="modalBtn12" onclick="createTooltip(this.id, 'Max Number of Students Per Clinical Instructor', 'The maximum number of students with which can be taught per Clinical Instructor.')">?</button><br>
+
+            <label for="input6"><b>Max Number of Students You Can Enroll Per Course:</b></label><br>
+            <input type="number" id="input6" name="input6">
+            <button type='button' class="modalBtn" id="modalBtn13" onclick="createTooltip(this.id, 'Max Number of Students You Can Enroll Per Course', 'This is the max number of Students which can be enrolled in this course.')">?</button><br>
+        </form>
+
+          <button type="button" class="navButton" onclick = "form2Back();">Back</button>
+          <button type="button" class="navButton" onclick = "form2Next();">Next</button>
+
+    </div>
+</body>
+<script src="./main.js"></script>
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+</html>

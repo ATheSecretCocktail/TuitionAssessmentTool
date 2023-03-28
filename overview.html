@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuition Assessment Tool</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload = "overviewLoad();">
+    <div id="main">
+        <div class="topnav">
+            <img class="logo" src="Logo-circle.png">
+            <ul>
+                <a class="active" href="instructions.html">Instructions</a>
+                <a href="index.html">Courses</a>
+                <a href="faq.html">FAQ</a>
+                <a href="#account">Account</a>
+            </ul>
+        </div>
+        <h1>Tuition Assessment Tool</h1>
+        
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>header</h1>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <p>text</p>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <button type='button' class="navButton" onclick="document.getElementById('myModal').style.display = 'none';" style="background-color: #21346A;">Close</button>
+            </div>
+        </div>
+
+        <form id = "formInputs">
+
+            <div class="overviewContainer">
+                <!-- ----------------------------FORM 1----------------------------------- -->
+                <div class="overviewFormContainer">
+                    <h2>Fill NATCEP Training Hours For:</h2>
+
+                    <div class="overviewFormItem">
+                        <label for="form1input1"><b>Theory:</b></label><br>
+                        <input type="number" id="form1input1" name="form1input1" oninput="updateOnInput()">
+                        <button type='button' class="modalBtn" id="modalBtn36" onclick="createTooltip(this.id, 'Theory', 'The number of hours associated with the lecture portion of the class.')">?</button><br>
+                    </div>
+        
+                    <div class="overviewFormItem">
+                        <label for="form1input2"><b>Lab:</b></label><br>
+                        <input type="number" id="form1input2" name="form1input2" oninput="updateOnInput()">
+                        <button type='button' class="modalBtn" id="modalBtn37" onclick="createTooltip(this.id, 'Lab', 'The number of hours associated with the lab portion of the class.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form1input3"><b>Clinical:</b></label><br>
+                        <input type="number" id="form1input3" name="form1input3" oninput="updateOnInput()">
+                        <button type='button' class="modalBtn" id="modalBtn38" onclick="createTooltip(this.id, 'Clinical', 'The number of hours associated with the clinical portion of the class.')">?</button><br>
+                    </div>
+        
+                    <!-- <label id="form1update"></label> -->
+                </div>
+                <!-- ----------------------------FORM 2----------------------------------- -->
+                <div class="overviewFormContainer">
+                    <h2>Figures For Calculations:</h2>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input1"><b>Length of Course in Weeks:</b></label><br>
+                        <input type="number" id="form2input1" name="form2input1">
+                        <button type='button' class="modalBtn" id="modalBtn39" onclick="createTooltip(this.id, 'Length of Course in Weeks', 'The number of weeks it will take to hold the course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input2"><b>Hourly Rate for Classroom Instructor:</b></label><br>
+                        <input type="number" id="form2input2" name="form2input2">
+                        <button type='button' class="modalBtn" id="modalBtn40" onclick="createTooltip(this.id, 'Hourly Rate for Classroom Instructor', 'The hourly rate paid to the Classroom Instructor associated with Theory and Lab portion of the class.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input3"><b>Hourly Rate for Clinical Instructor:</b></label><br>
+                        <input type="number" id="form2input3" name="form2input3">
+                        <button type='button' class="modalBtn" id="modalBtn41" onclick="createTooltip(this.id, 'Max Number of Students Per Clinical Instructor', 'The maximum number of students with which can be taught per Clinical Instructor.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input4"><b>Max Number of Students Per Class Instructor:</b></label><br>
+                        <input type="number" id="form2input4" name="form2input4">
+                        <button type='button' class="modalBtn" id="modalBtn42" onclick="createTooltip(this.id, 'Max Number of Students Per Class Instructor', 'The maximum number of students which can be taught per Class Instructor.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input5"><b>Max Number of Students Per Clinical Instructor:</b></label><br>
+                        <input type="number" id="form2input5" name="form2input5">
+                        <button type='button' class="modalBtn" id="modalBtn43" onclick="createTooltip(this.id, 'Max Number of Students Per Clinical Instructor', 'The maximum number of students with which can be taught per Clinical Instructor.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form2input6"><b>Max Number of Students You Can Enroll Per Course:</b></label><br>
+                        <input type="number" id="form2input6" name="form2input6">
+                        <button type='button' class="modalBtn" id="modalBtn44" onclick="createTooltip(this.id, 'Max Number of Students You Can Enroll Per Course', 'This is the max number of Students which can be enrolled in this course.')">?</button><br>
+                    </div>
+                </div>
+                <!-- ----------------------------FORM 3----------------------------------- -->
+                <div class="overviewFormContainer">
+                    <h2>School Monthly Expenses (Part 1):</h2>
+
+                    <div class="overviewFormItem">
+                        <label for="form3input1"><b>Rent:</b></label><br>
+                        <input type="number" id="form3input1" name="form3input1">
+                        <button type='button' class="modalBtn" id="modalBtn45" onclick="createTooltip(this.id, 'Rent', 'The cost of Rent for the CNA School.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form3input2"><b>Utilities:</b></label><br>
+                        <input type="number" id="form3input2" name="form3input2">
+                        <button type='button' class="modalBtn" id="modalBtn46" onclick="createTooltip(this.id, 'Utilities', 'The cost of Utilities for the CNA School.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form3input3"><b>Professional Liability Insurance:</b></label><br>
+                        <input type="number" id="form3input3" name="form3input3">
+                        <button type='button' class="modalBtn" id="modalBtn47" onclick="createTooltip(this.id, 'Professional Liability Insurance', 'The cost of Professional Liability Insurance. Also known as Errors & Omissions (E&O).')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form3input4"><b>Student Insurance/Surety Board:</b></label><br>
+                        <input type="number" id="form3input4" name="form3input4">
+                        <button type='button' class="modalBtn" id="modalBtn48" onclick="createTooltip(this.id, 'Student Insurance/Surety Board', 'The cost of Student Insurance and the Surety Board.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form3input5"><b>Lab Supplies:</b></label><br>
+                        <input type="number" id="form3input5" name="form3input5">
+                        <button type='button' class="modalBtn" id="modalBtn60" onclick="createTooltip(this.id, 'Lab Supplies', 'The monthly cost of lab supplies for the school. This is a school-wide cost that is not dependent on the number of students or courses.')">?</button><br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="overviewContainer">
+                <!-- ----------------------------FORM 4----------------------------------- -->
+                <div class="overviewFormContainer">
+                    <h2>School Monthly Expenses (Part 2):</h2>
+
+                    <div class="overviewFormItem">
+                        <label for="form4input1"><b>Program Coordinator Salary:</b></label><br>
+                        <input type="number" id="form4input1" name="form4input1" oninput="updateOnInput()">
+                        <button type='button' class="modalBtn" id="modalBtn49" onclick="createTooltip(this.id, 'Program Coordinator Salary',
+                        'This is the monthly salary of your program coordinator. This is a school-wide cost that is not dependent on number of courses or students.')">?</button><br>
+                    </div>
+
+                    <!-- <label id="form2update"></label> -->
+
+                    <div class="overviewFormItem">
+                        <label for="form4input2"><b>Secretary Salary:</b></label><br>
+                        <input type="number" id="form4input2" name="form4input2">
+                        <button type='button' class="modalBtn" id="modalBtn50" onclick="createTooltip(this.id, 'Secretary Salary',
+                        'This is the monthly salary of your secretary. This is a school-wide cost that is not dependent on number of courses or students.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form4input3"><b>Marketing:</b></label><br>
+                        <input type="number" id="form4input3" name="form4input3">
+                        <button type='button' class="modalBtn" id="modalBtn51" onclick="createTooltip(this.id, 'Marketing',
+                        'This is your monthly expense for marketing. This is a school-wide cost that is not dependent on number of courses or students.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form4input4"><b>Loan Repayment:</b></label><br>
+                        <input type="number" id="form4input4" name="form4input4">
+                        <button type='button' class="modalBtn" id="modalBtn52" onclick="createTooltip(this.id, 'Loan Repayment',
+                        'This is the amount of money you spend each month on loan repayment. This is a school-wide cost that is not dependent on number of courses or students.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem">
+                        <label for="form4input5"><b>Other:</b></label><br>
+                        <input type="number" id="form4input5" name="form4input5">
+                        <button type='button' class="modalBtn" id="modalBtn53" onclick="createTooltip(this.id, 'Other',
+                        'This is for any other monthly expenses you would like to include. This is a school-wide cost that is not dependent on number of courses or students.')">?</button><br>
+                    </div>
+                </div>
+                <!-- ----------------------------FORM 5----------------------------------- -->
+                <div class="overviewFormContainer">
+                    <h2>Options With Costs (Part 1):</h2>
+
+                    <div class="overviewFormItem" id="form5item1">
+                        <label for="form5input1"><b>Application Fee:</b></label><br>
+                        <input type="number" id="form5input1" name="form5input1">
+                        <button type='button' class="modalBtn" id="modalBtn54" onclick="createTooltip(this.id, 'Application Fee',
+                        'This is the per-student application fee for this course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form5item2">
+                        <label for="form5input2"><b>Textbook:</b></label><br>
+                        <input type="number" id="form5input2" name="form5input2">
+                        <button type='button' class="modalBtn" id="modalBtn55" onclick="createTooltip(this.id, 'Textbook',
+                        'This is the per-student cost of textbooks for this course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form5item3">
+                        <label for="form5input3"><b>Uniform:</b></label><br>
+                        <input type="number" id="form5input3" name="form5input3">
+                        <button type='button' class="modalBtn" id="modalBtn56" onclick="createTooltip(this.id, 'Uniform',
+                        'This is the per-student cost of uniforms for this course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form5item4">
+                        <label for="form5input4"><b>I.D. Badge:</b></label><br>
+                        <input type="number" id="form5input4" name="form5input4">
+                        <button type='button' class="modalBtn" id="modalBtn57" onclick="createTooltip(this.id, 'I.D. Badge',
+                        'This is the per-student cost of I.D. Badges for this course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form5item5">
+                        <label for="form5input5"><b>Blood Pressure Cuff & Stethoscope:</b></label><br>
+                        <input type="number" id="form5input5" name="form5input5">
+                        <button type='button' class="modalBtn" id="modalBtn58"  onclick="createTooltip(this.id, 'Blood Pressure Cuff & Stethoscope',
+                        'This is the per-student cost of blood pressure cuffs and stethoscopes for this course.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form5item6">
+                        <label for="form5input6"><b>Second Hand Watch:</b></label><br>
+                        <input type="number" id="form5input6" name="form5input6">
+                        <button type='button' class="modalBtn" id="modalBtn59" onclick="createTooltip(this.id, 'Second Hand Watch', 
+                        'This is the per-student cost of second hand watches for this course.')">?</button><br>
+                    </div>
+                </div>
+                <!-- ----------------------------FORM 6----------------------------------- -->
+                <div class="overviewFormContainer" id="form6container">
+                    <h2>Options With Costs (Part 2):</h2>
+
+                    <div class="overviewFormItem" id="form6item1">
+                        <label for="form6input1"><b>State Competency Examination:</b></label><br>
+                        <input type="number" id="form6input1" name="form6input1">
+                        <button type='button' class="modalBtn" id="modalBtn61" onclick="createTooltip(this.id, 'State Competency Examination', 'The cost of administering and giving a student the option to take the State Competency Examination.')">?</button><br>
+                    </div>
+        
+                    <div class="overviewFormItem" id="form6item2">
+                        <label for="form6input2"><b>CPR Certification:</b></label><br>
+                        <input type="number" id="form6input2" name="form6input2">
+                        <button type='button' class="modalBtn" id="modalBtn62" onclick="createTooltip(this.id, 'CPR Certification', 'The cost for a student to become CPR certified.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form6item3">
+                        <label for="form6input3"><b>Background Check:</b></label><br>
+                        <input type="number" id="form6input3" name="form6input3">
+                        <button type='button' class="modalBtn" id="modalBtn63" onclick="createTooltip(this.id, 'Background Check', 'The cost to complete a background check for each student.')">?</button><br>
+                    </div>
+        
+                    <div class="overviewFormItem" id="form6item4">
+                        <label for="form6input4"><b>PPD Test:</b></label><br>
+                        <input type="number" id="form6input4" name="form6input4">
+                        <button type='button' class="modalBtn" id="modalBtn64" onclick="createTooltip(this.id, 'PPD Test', 'The cost to give a student a PPD test.')">?</button><br>
+                    </div>
+        
+                    <div class="overviewFormItem" id="form6item5">
+                        <label for="form6input5"><b>Drug Screening:</b></label><br>
+                        <input type="number" id="form6input5" name="form6input5">
+                        <button type='button' class="modalBtn" id="modalBtn65" onclick="createTooltip(this.id, 'Drug Screening', 'The cost to complete a drug screening for each student.')">?</button><br>
+                    </div>
+
+                    <div class="overviewFormItem" id="form6item6">
+                        <label for="form6input6"><b>CNA Registration Fee:</b></label><br>
+                        <input type="number" id="form6input6" name="form6input6">
+                        <button type='button' class="modalBtn" id="modalBtn66" onclick="createTooltip(this.id, 'CNA Registration Fee', 'The cost to register for a CNA school for a student.')">?</button><br>
+                    </div>
+                </div>
+            </div>
+          </form>
+
+          <button type="button" class="navButton" onclick = "overviewBack();">Back</button>
+          <button type="button" class="navButton" id="submitButton" onclick = "overviewNext();">Submit</button>
+    </div>
+</body>
+<script src="./main.js"></script>
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+</html>

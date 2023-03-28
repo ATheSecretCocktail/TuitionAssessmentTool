@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuition Assessment Tool</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload = "global1Load();">
+
+    <div id="main">
+        <div class="topnav">
+            <img class="logo" src="Logo-circle.png">
+            <ul>
+                <a class="active" href="instructions.html">Instructions</a>
+                <a href="index.html">Courses</a>
+                <a href="faq.html">FAQ</a>
+                <a href="#account">Account</a>
+            </ul>
+        </div>
+        <h1>Tuition Assessment Tool</h1>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>header</h1>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <p>text</p>
+                <hr style="height:1px;width:90%;margin-left:0;border-width:0;background-color:rgb(201, 201, 201)">
+                <button type='button' class="navButton" onclick="document.getElementById('myModal').style.display = 'none';" style="background-color: #21346A;">Close</button>
+            </div>
+        </div>
+        
+        <form id = "formInputs">
+            <div class="buttonGroup">
+                <button type="button" class="navButton" id="resetButton" onclick = "fill();">Fill Empty</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetPage();">Clear Fields</button>
+                <button type="button" class="navButton" id="resetButton" onclick = "resetAll();">Reset Entire Course</button>
+            </div>
+
+            <h2>School Monthly Expenses (Part 1):</h2>
+
+            <label for="input1"><b>Rent:</b></label><br>
+            <input type="number" id="input1" name="input1">
+            <button type='button' class="modalBtn" id="modalBtn27" onclick="createTooltip(this.id, 'Rent', 'The cost of Rent for the CNA School.')">?</button><br>
+
+            <label for="input2"><b>Utilities:</b></label><br>
+            <input type="number" id="input2" name="input2">
+            <button type='button' class="modalBtn" id="modalBtn28" onclick="createTooltip(this.id, 'Utilities', 'The cost of Utilities for the CNA School.')">?</button><br>
+
+
+            <label for="input3"><b>Professional Liability Insurance:</b></label><br>
+            <input type="number" id="input3" name="input3">
+            <button type='button' class="modalBtn" id="modalBtn29" onclick="createTooltip(this.id, 'Professional Liability Insurance', 'The cost of Professional Liability Insurance. Also known as Errors & Omissions (E&O).')">?</button><br>
+
+            <label for="input4"><b>Student Insurance/Surety Board:</b></label><br>
+            <input type="number" id="input4" name="input4">
+            <button type='button' class="modalBtn" id="modalBtn30" onclick="createTooltip(this.id, 'Student Insurance/Surety Board', 'The cost of Student Insurance and the Surety Board.')">?</button><br>
+
+            <label for="input5"><b>Lab Supplies:</b></label><br>
+            <input type="number" id="input5" name="input5">
+            <button type='button' class="modalBtn" id="modalBtn20" onclick="createTooltip(this.id, 'Lab Supplies', 'The monthly cost of lab supplies for the school. This is a school-wide cost that is not dependent on the number of students or courses.')">?</button><br>
+            
+          </form>
+          
+          <button type="button" class="navButton" onclick = "global1Back();">Back</button>
+          <button type="button" class="navButton" onclick = "global1Next();">Next</button>
+
+    </div>
+</body>
+<script src="./main.js"></script>
+<script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</html>
