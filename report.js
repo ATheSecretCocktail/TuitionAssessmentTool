@@ -64,8 +64,8 @@
             
             maxCourses = Math.floor(52 / courseWeeks);
 
-            annualClassInstructorCost += (classInstructorSalary * 12);
-            annualClinInstructorCost += (clinInstructorSalary * 12);
+            annualClassInstructorCost += (classInstructorSalary * maxCourses);
+            annualClinInstructorCost += (clinInstructorSalary * maxCourses);
 
             allTuitionCourseReportItems.push(tuitionCourseReportItems);
         }

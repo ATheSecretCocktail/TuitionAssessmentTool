@@ -364,8 +364,12 @@
         doc.text("Annual Staffing Costs", 40, pageHeight * 0.63);
         doc.setFont('Helvetica','normal');
         doc.text("Program Coordinator: $" + (12 * getCookie(expenseItems[5])).toLocaleString(), 40, pageHeight * 0.655);
-        doc.text("Class/Lab Instructors: $" + (annualClassInstructorCost).toLocaleString(), 40, pageHeight * 0.675);
-        doc.text("Clinical Instructors: $" + (annualClinInstructorCost).toLocaleString(), 40, pageHeight * 0.695);
+        //doc.text("Class/Lab Instructors: $" + (annualClassInstructorCost).toLocaleString(), 40, pageHeight * 0.675);
+        //doc.text("Clinical Instructors: $" + (annualClinInstructorCost).toLocaleString(), 40, pageHeight * 0.695);
+
+       doc.text("Class/Lab Instructors: $" + (annualClassInstructorCost).toLocaleString() + "(Class Instructor Hourly Rate is $" + getCookie("course1Hourly Rate For Class Ins") +")", 40, pageHeight * 0.675);
+       doc.text("Clinical Instructors: $" + (annualClinInstructorCost).toLocaleString() + "(Clinical Instructor Hourly Rate is $" + getCookie("course1Hourly Rate For Clinical Instructor") +")", 40, pageHeight * 0.695);
+
         
         doc.setFont('Helvetica', 'Bold');
         doc.text("Total Staffing Costs: $" + ((12 * getCookie(expenseItems[5])) + annualClassInstructorCost + annualClinInstructorCost).toLocaleString(), 40, pageHeight * 0.735);
