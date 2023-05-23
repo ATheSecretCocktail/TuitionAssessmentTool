@@ -1236,13 +1236,13 @@ function calculateCourseCost(courseNumber) {
     for (var i = 1; i <= form5Names.length; i++) {
         var fullName = "course" + courseNumber + form5Names[i - 1];
         if (getCookie(fullName)) {
-            courseCost += parseInt(getCookie(fullName));
+            courseCost += parseInt(getCookie(fullName))*getCookie("course" + courseNumber + "Maximum Number Of Enrolled Students Per Course");
         }
     }
     for (var i = 1; i <= form6Names.length; i++) {
         var fullName = "course" + courseNumber + form6Names[i - 1];
         if (getCookie(fullName)) {
-            courseCost += parseInt(getCookie(fullName));
+            courseCost += parseInt(getCookie(fullName))*getCookie("course" + courseNumber + "Maximum Number Of Enrolled Students Per Course");
         }
     }
     if (getCookie("course" + courseNumber + "Licensing Fee")) {
